@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+            <title>Hello KnockoutJS!</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="http://knockoutjs.com/downloads/knockout-3.4.0.js"></script>
+		<script type="text/javascript" src="https://raw.githubusercontent.com/SteveSanderson/knockout.mapping/master/build/output/knockout.mapping-latest.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" data-semver="3.3.2" data-require="bootstrap@*" />
+            <style>
+body{font-family: verdana;}
+h1 {margin: 20px}
+ul#photos {
+width: 350px;
+list-style: none;
+}
+
+ul#photos li {
+float: left;
+margin: 5px;
+}
+
+ul#photos img{
+border: 5px solid orange;
+width: 75px;
+height: 75px;
+margin: 5px;
+}
+           </style>
+ 	</head>
+	<body>
+		<div style="height:20px;">
+		</div>
+
+            <h1>KnockoutJS Flickr Gallery</h1>
+
+		<ul id="photos" data-bind="foreach: photosArr" style="list-style-type:none;">
+
+			<li style="float:left;margin:2px;">
+
+				<a data-bind="attr: {href: generatedLink}"><img data-bind="attr:{src: generatedUrl}" width="75px" height="75px"></a>
+			</li>
+		</ul>
+		
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+            <title>Hello KnockoutJS!</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="http://knockoutjs.com/downloads/knockout-3.4.0.js"></script>
+		<script type="text/javascript" src="https://raw.githubusercontent.com/SteveSanderson/knockout.mapping/master/build/output/knockout.mapping-latest.js"></script>
+		<script type="text/javascript" src="search.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" data-semver="3.3.2" data-require="bootstrap@*" />
+            <style>
+            body{font-family: verdana;}
+           </style>
+ 	</head>
+	<body>
+		<div style="height:20px;">
+		</div>
+
+            <center>
+			<h1>Flicker Image Search</h1>
+			<div class="form-inline">
+			<div class="form-group">
+			<input type="text" id="query" class="form-control" style="width:500px;" data-bind="value: searchString"/> &nbsp; &nbsp;
+			<button class="btn-primary btn-primary form-control" id="searchbtn">Search</button>
+			</div>
+		</div>
+            </center>
+
+		<ul data-bind="foreach: photosArr" style="list-style-type:none;margin-top: 20px">
+
+			<li style="float:left;margin:2px;">
+
+				<a data-bind="attr: {href: generatedLink}"><img data-bind="attr:{src: generatedUrl}" width="250px" height="250px"></a>
+			</li>
+		</ul>
+		
+	</body>
+</html>
